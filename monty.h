@@ -39,13 +39,15 @@ void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 extern stack_t *head;
-void push_to_stack(stack_t **new_node, __attribut__((unused))unsigned int line_num);
+typedef void (*op_func)(stack_t **, unsigned int);
+void push_to_stack(stack_t **new_node, unsigned int line_num);
 void display(stack_t **stack, unsigned int line_num);
-void *get_func(char *op, char *data, int line_num);
-void call_func(op_func f, char *op, char *data, int line_num);
+void get_func(char *op, char *data, unsigned int line_num);
+void call_func(op_func f, char *op, char *data, unsigned int line_num);
 stack_t *create_node(int n);
 void open_file(char *filename);
 void read_file(FILE *fd);
-void parse_line(char *line, int line_num);
-
+void parse_line(char *line, unsigned int line_num);
+void free_nodes(void);
+  
 #endif

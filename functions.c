@@ -1,6 +1,6 @@
 #include "monty.h"
 
-void push_to_stack(stack_t **new_node, __attribut__((unused))unsigned int line_num)
+void push_to_stack(stack_t **new_node, __attribute__((unused))unsigned int line_num)
 {
   stack_t *temp;
 
