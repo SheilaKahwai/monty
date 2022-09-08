@@ -66,7 +66,7 @@ printf("%d\n", (*stack)->n);
  * @line_num: line number of opcode
  */
 
-void remove_top(stack **stack, unsigned int line_num)
+void remove_top(stack_t **stack, unsigned int line_num)
 {
 stack_t *temp;
 if (stack == NULL || *stack == NULL)
