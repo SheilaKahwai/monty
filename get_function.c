@@ -2,7 +2,7 @@
 
 void get_func(char *op, char *data, unsigned int line_num)
 {
-  int i;
+  int i, count;
   
   instruction_t funcs_list[] = {
 				 {"push", push_to_stack},
@@ -14,7 +14,9 @@ void get_func(char *op, char *data, unsigned int line_num)
 				 {"nop", do_nothing}*/
   };
 
-  for (i = 0; funcs_list[i].opcode != NULL; i++)
+  count = 2;
+
+  for (i = 0; i < count; i++)
     {
       if (strcmp(op, funcs_list[i].opcode) == 0)
 	{
