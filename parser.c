@@ -8,9 +8,19 @@
 void open_file(char *filename)
 {
 FILE *fd;
-
+int file_check;
+ 
 if (filename == NULL)
+{
+fprintf(stderr, "USAGE: monty file\n");
 exit(EXIT_FAILURE);
+}
+file_check = access(filename, R_OK);
+if (file_check == -1)
+{
+fprintf(stderr, "Error: Can't open file %s\n", filename);
+exit(EXIT_FAILURE);
+}
 fd = fopen(filename, "r");
 if (fd == NULL)
 {
