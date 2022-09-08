@@ -49,5 +49,4 @@ void open_file(char *filename);
 void read_file(FILE *fd);
 void parse_line(char *line, unsigned int line_num);
 void free_nodes(void);
-  
 #endif
