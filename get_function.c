@@ -3,7 +3,8 @@
 void get_func(char *op, char *data, unsigned int line_num)
 {
   int i;
-
+  int flag;
+  
   instruction_t funcs_list[] = {
 				 {"push", push_to_stack},
 				 {"pall", display}
@@ -14,16 +15,20 @@ void get_func(char *op, char *data, unsigned int line_num)
 				 {"nop", do_nothing}*/
   };
 
-  for (i = 0; funcs_list[i].opcode != NULL; i++)
+  for (flag = 1, i = 0; funcs_list[i].opcode != NULL; i++)
     {
       if (strcmp(op, funcs_list[i].opcode) == 0)
 	{
 	  call_func(funcs_list[i].f, op, data, line_num);
+	  flag = 0
 	  break;
 	}
     }
-  fprintf(stderr, "L%d: unknown instruction %s\n", line_num, op);
-  exit(EXIT_FAILURE);
+  if (flag == 1)
+    {
+      fprintf(stderr, "L%d: unknown instruction %s\n", line_num, op);
+      exit(EXIT_FAILURE);
+    }
 }
 
 void call_func(op_func f, char *op, char *data, unsigned int line_num)
