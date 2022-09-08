@@ -9,7 +9,7 @@
  */
 void get_func(char *op, char *data, unsigned int line_num, int format)
 {
-int i, flag;
+int i, flag, count;
 instruction_t funcs_list[] = {
 {"push", push_to_stack},
 {"pall", display}
@@ -21,8 +21,8 @@ instruction_t funcs_list[] = {
  * {"nop", do_nothing}
  */
 };
-
-for (flag = 1, i = 0; funcs_list[i].opcode != NULL; i++)
+count = 2;
+for (flag = 1, i = 0; i < count; i++)
 {
 if (strcmp(op, funcs_list[i].opcode) == 0)
 {
