@@ -9,7 +9,6 @@ void open_file(char *filename)
 {
 FILE *fd;
 int file_check;
- 
 if (filename == NULL)
 {
 fprintf(stderr, "USAGE: monty file\n");
