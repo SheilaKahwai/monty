@@ -43,3 +43,19 @@ printf("%d\n", temp->n);
 temp = temp->next;
 }
 }
+
+/**
+ * print_top - prints the top node of the stack
+ * @stack: double pointer to top of stack
+ * @line_num: line number of the opcode
+ */
+
+void print_top(stack_t **stack, unsigned int line_num)
+{
+if (stack == NULL || *stack == NULL)
+{
+fprintf(stderr, "L%d: can't pint, stack empty\n", line_num);
+exit(EXIT_FAILURE);
+}
+printf("%d\n", (*stack)->n);
+}

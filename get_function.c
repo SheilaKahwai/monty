@@ -12,16 +12,16 @@ void get_func(char *op, char *data, unsigned int line_num, int format)
 int i, flag, count;
 instruction_t funcs_list[] = {
 {"push", push_to_stack},
-{"pall", display}
+{"pall", display},
+{"pint", print_top}
 /*
- * {"pint", print_top},
  * {"pop", remove_top},
  * {"swap", swap_nodes},
  * {"add", sum_nodes},
  * {"nop", do_nothing}
  */
 };
-count = 2;
+count = 3;
 for (flag = 1, i = 0; i < count; i++)
 {
 if (strcmp(op, funcs_list[i].opcode) == 0)

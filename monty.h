@@ -49,4 +49,5 @@ void open_file(char *filename);
 void read_file(FILE *fd);
 int parse_line(char *line, unsigned int line_num, int);
 void free_nodes(void);
+void print_top(stack_t **stack, unsigned int line_number);
 #endif
