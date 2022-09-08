@@ -13,7 +13,7 @@ int i, flag, count;
 instruction_t funcs_list[] = {
 {"push", push_to_stack},
 {"pall", display},
-{"pint", print_top}.
+{"pint", print_top},
 {"pop", remove_top},
 {"swap", swap_nodes},
 {"nop", do_nothing}
