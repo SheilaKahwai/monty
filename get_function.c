@@ -5,10 +5,11 @@
  * @op: opcode
  * @data: data after opcode
  * @line_num: line number of the string containing opcode
+ * @format: format specifier
  */
-void get_func(char *op, char *data, unsigned int line_num)
+void get_func(char *op, char *data, unsigned int line_num, int format)
 {
-int i, count;
+int i, flag;
 instruction_t funcs_list[] = {
 {"push", push_to_stack},
 {"pall", display}
@@ -21,14 +22,18 @@ instruction_t funcs_list[] = {
  */
 };
 
-count = 2;
-for (i = 0; i < count; i++)
+for (flag = 1, i = 0; funcs_list[i].opcode != NULL; i++)
 {
 if (strcmp(op, funcs_list[i].opcode) == 0)
 {
-call_func(funcs_list[i].f, op, data, line_num);
-break;
+call_func(funcs_list[i].f, op, data, line_num, format);
+flag = 0;
 }
+}
+if (flag == 1)
+{
+fprintf(stderr, "L%d: unknown instruction %s\n", line_num, op);
+exit(EXIT_FAILURE);
 }
 }
 
@@ -38,8 +43,9 @@ break;
  * @op: opcode
  * @data: data after opcode
  * @line_num: line number of string containing opcode
+ * @fmt: format specifier
  */
-void call_func(op_func f, char *op, char *data, unsigned int line_num)
+void call_func(op_func f, char *op, char *data, unsigned int line_num, int fmt)
 {
 stack_t *node;
 int flag;
@@ -62,6 +68,7 @@ exit(EXIT_FAILURE);
 }
 }
 node = create_node(atoi(data) * flag);
+if (fmt == 0)
 f(&node, line_num);
 }
 else

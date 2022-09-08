@@ -42,11 +42,11 @@ extern stack_t *head;
 typedef void (*op_func)(stack_t **, unsigned int);
 void push_to_stack(stack_t **new_node, unsigned int line_num);
 void display(stack_t **stack, unsigned int line_num);
-void get_func(char *op, char *data, unsigned int line_num);
-void call_func(op_func f, char *op, char *data, unsigned int line_num);
+void get_func(char *op, char *data, unsigned int line_num, int);
+void call_func(op_func f, char *op, char *data, unsigned int line_num, int);
 stack_t *create_node(int n);
 void open_file(char *filename);
 void read_file(FILE *fd);
-void parse_line(char *line, unsigned int line_num);
+int parse_line(char *line, unsigned int line_num, int);
 void free_nodes(void);
 #endif
