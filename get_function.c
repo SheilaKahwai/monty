@@ -22,6 +22,8 @@ void get_func(char *op, char *data, unsigned int line_num)
 	  break;
 	}
     }
+  fprintf(stderr, "L%d: unknown instruction %s\n", line_num, op);
+  exit(EXIT_FAILURE);
 }
 
 void call_func(op_func f, char *op, char *data, unsigned int line_num)
