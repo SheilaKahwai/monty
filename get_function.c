@@ -59,11 +59,16 @@ if (data != NULL && data[0] == '-')
 data = data + 1;
 flag = -1;
 }
+if (data == NULL)
+{
+fprintf(stderr, "L%d: usage: push integer\n", line_num);
+exit(EXIT_FAILURE);
+}
 for (i = 0; data[i] != '\0'; i++)
 {
 if (isdigit(data[i]) == 0)
 {
-fprintf(stderr, "L%d: unknown instruction %s", line_num, op);
+fprintf(stderr, "L%d: usage: push integer\n", line_num);
 exit(EXIT_FAILURE);
 }
 }
