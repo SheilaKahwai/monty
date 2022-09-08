@@ -35,6 +35,8 @@ void parse_line(char *line, unsigned int line_num)
   if (line)
     {
       opcode = strtok(line, "\n ");
+      if (opcode == NULL)
+	return;
       data = strtok(NULL, "\n ");
     }
   get_func(opcode, data, line_num);
