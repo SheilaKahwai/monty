@@ -53,4 +53,5 @@ void print_top(stack_t **stack, unsigned int line_number);
 void swap_nodes(stack_t **stack, unsigned int line_number);
 void do_nothing(stack_t **stack, unsigned int line_number);
 void remove_top(stack_t **stack, unsigned int line_number);
+void sum_nodes(stack_t **stack, unsigned int line_number);
 #endif
