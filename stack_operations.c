@@ -71,7 +71,7 @@ if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 fprintf(stderr, "L%d: can't sub, stack too short\n", line_num);
 exit(EXIT_FAILURE);
 }
-*stack = stack->next;
+*stack = (*stack)->next;
 diff = (*stack)->n - (*stack)->prev->n;
 (*stack)->n = diff;
 free((*stack)->prev);
