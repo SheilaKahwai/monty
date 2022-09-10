@@ -44,7 +44,6 @@ format = 0;
 for (line_num = 1; fgets(line, 100, fd) != NULL; line_num++)
 {
 format = parse_line(line, line_num, format);
-line_num++;
 }
 }
 
