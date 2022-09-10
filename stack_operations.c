@@ -22,7 +22,7 @@ void swap_nodes(stack_t **stack, unsigned int line_num)
 stack_t *temp;
 if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 {
-fprintf(stderr, "L%d: can't swap, stack too short", line_num);
+fprintf(stderr, "L%d: can't swap, stack too short\n", line_num);
 exit(EXIT_FAILURE);
 }
 temp = (*stack)->next;
