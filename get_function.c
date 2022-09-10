@@ -17,9 +17,10 @@ instruction_t funcs_list[] = {
 {"pop", remove_top},
 {"swap", swap_nodes},
 {"add", sum_nodes},
-{"nop", do_nothing}
+{"nop", do_nothing},
+{"sub", sub_nodes}
 };
-count = 7;
+count = 8;
 for (flag = 1, i = 0; i < count; i++)
 {
 if (strcmp(op, funcs_list[i].opcode) == 0)

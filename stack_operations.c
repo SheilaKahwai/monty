@@ -56,3 +56,24 @@ sum = (*stack)->n + (*stack)->prev->n;
 free((*stack)->prev);
 (*stack)->prev = NULL;
 }
+
+/**
+ * sub_nodes - finds the difference between the first two nodes
+ * @stack: double pointer to top of stack
+ * @line_num: line number of opcode
+ */
+void sub_nodes(stack_t **stack, unsigned int line_num)
+{
+int diff;
+
+if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+{
+fprintf(stderr, "L%d: can't sub, stack too short\n", line_num);
+exit(EXIT_FAILURE);
+}
+*stack = stack->next;
+diff = (*stack)->n - (*stack)->prev->n;
+(*stack)->n = diff;
+free((*stack)->prev);
+(*stack)->prev = NULL;
+}
