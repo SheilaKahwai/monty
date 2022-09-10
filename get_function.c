@@ -24,6 +24,8 @@ instruction_t funcs_list[] = {
 {"mod", mod_nodes}
 };
 count = 11;
+if (op[0] == '#')
+return;
 for (flag = 1, i = 0; i < count; i++)
 {
 if (strcmp(op, funcs_list[i].opcode) == 0)
