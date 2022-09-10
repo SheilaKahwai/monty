@@ -21,9 +21,10 @@ instruction_t funcs_list[] = {
 {"sub", sub_nodes},
 {"div", div_nodes},
 {"mul", mul_nodes},
-{"mod", mod_nodes}
+{"mod", mod_nodes},
+{"pchar", pchar_node}
 };
-count = 11;
+count = 12;
 if (op[0] == '#')
 return;
 for (flag = 1, i = 0; i < count; i++)

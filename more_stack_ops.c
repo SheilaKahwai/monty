@@ -74,3 +74,23 @@ result = (*stack)->n % (*stack)->prev->n;
 free((*stack)->prev);
 (*stack)->prev = NULL;
 }
+
+/**
+ * pchar_node - prints the character at the top of stack
+ * @stack: double pointer to top of stack
+ * @line_num: line number of opcode
+ */
+void pchar_node(stack_t **stack, unsigned int line_num)
+{
+if (stack == NULL || (*stack) == NULL)
+{
+fprintf(stderr, "L%d: can't pchar, stack empty\n", line_num);
+exit(EXIT_FAILURE);
+}
+if ((*stack)-> n > 122 || (*stack)->n < 0)
+{
+fprintf(stderr, "L%d: can't pchar, value out of range\n", line_num);
+exit(EXIT_FAILURE);
+}
+printf("%c\n", (char)(*stack)->n);
+}
