@@ -47,7 +47,7 @@ int sum;
 
 if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 {
-fprintf(stderr, "L%d: can't add, stack too short", line_num);
+fprintf(stderr, "L%d: can't add, stack too short\n", line_num);
 exit(EXIT_FAILURE);
 }
 (*stack) = (*stack)->next;
