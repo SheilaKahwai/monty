@@ -8,18 +8,17 @@
 
 void pstr_nodes(stack_t **stack, unsigned int line_num)
 {
-(void) line_num;
 stack_t *temp;
-
+(void) line_num;
 temp = *stack;
 if (stack == NULL || *stack == NULL)
 {
 printf("\n");
 return;
 }
-while(temp != NULL)
+while (temp != NULL)
 {
-if (*stack->n > 122 || *stack->n <= 0)
+if (temp->n > 122 || temp->n <= 0)
 break;
 printf("%c", temp->n);
 temp = temp->next;
