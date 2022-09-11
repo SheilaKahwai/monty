@@ -25,3 +25,27 @@ temp = temp->next;
 }
 printf("\n");
 }
+
+/**
+ * rotate_top - rotates the stack to the top
+ * @stack: double pointer to top of stack
+ * @line_num: line number of opcode
+ */
+
+void rotate_top(stack_t **stack, unsigned int line_num)
+{
+stack_t *bottom;
+(void) line_num;
+bottom = *stack;
+if (!stack || !(*stack) || !((*stack)->next))
+return;
+while (bottom->next)
+{
+bottom = bottom->next;
+}
+bottom->next = *stack;
+(*stack)->prev = bottom;
+(*stack) = (*stack)->next;
+(*stack)->prev->next = NULL;
+(*stack)->prev = NULL;
+}

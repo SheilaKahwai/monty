@@ -23,9 +23,10 @@ instruction_t funcs_list[] = {
 {"mul", mul_nodes},
 {"mod", mod_nodes},
 {"pchar", pchar_node},
-{"pstr", pstr_nodes}
+{"pstr", pstr_nodes},
+{"rotl", rotate_top}
 };
-count = 13;
+count = 14;
 if (op[0] == '#')
 return;
 for (flag = 1, i = 0; i < count; i++)

@@ -60,4 +60,5 @@ void mul_nodes(stack_t **stack, unsigned int line_num);
 void mod_nodes(stack_t **stack, unsigned int line_num);
 void pchar_node(stack_t **stack, unsigned int line_num);
 void pstr_nodes(stack_t **stack, unsigned int line_num);
+void rotate_top(stack_t **stack, unsigned int line_num);
 #endif
