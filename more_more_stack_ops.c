@@ -49,3 +49,26 @@ bottom->next = *stack;
 (*stack)->prev->next = NULL;
 (*stack)->prev = NULL;
 }
+
+/**
+ * rotate_bottom - rotates the stack to the bottom
+ * @stack: double pointer to top of stack
+ * @line_num: lin number of opcode
+ */
+void rotate_bottom(stack_t **stack, unsigned int line_num)
+{
+stack_t *bottom;
+(void) line_num;
+bottom = *stack;
+if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+return;
+while (bottom->next != NULL)
+{
+bottom = bottom->next;
+}
+bottom->next = *stack;
+(*stack)->prev = bottom;
+bottom->prev->next = NULL;
+bottom->prev = NULL;
+*stack = bottom;
+}
